@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>纯css3制作时钟</title>
+	<link rel="stylesheet" href="">
+	<style>
+		html{
+			height:100%;
+		}
+		body{
+			background-color:#3f95ea;
+			background:linear-gradient(to right, #FD98E8, #4544FF );
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		ul,li{
+			list-style: none;
+		}
+		.clock-box{
+			width:280px;
+			height:280px;
+			background-color: #000;
+			border-radius:40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.clock-content{
+			background-color: #fff;
+			width: 240px;
+			height: 240px;
+			border-radius: 50%;
+			position: relative;
+		}
+		.nums{
+			position: relative;
+		}
+		.num{
+			position: absolute;
+			top:-5px;
+			left:50%;
+			height: 110px;
+			transform-origin:0% 100%;
+			-webkit-transform-origin:0% 100%;
+			-ms-transform-origin:0% 100%;
+			-moz-transform-origin:0% 100%;
+		}
+		.num:nth-child(1){
+			transform:rotate(25deg);
+			-webkit-transform:rotate(25deg);
+			-ms-transform:rotate(25deg);
+			-moz-transform:rotate(25deg);
+		}
+		.num:nth-child(2){
+			transform:rotate(55deg);
+			-webkit-transform:rotate(55deg);
+			-ms-transform:rotate(55deg);
+			-moz-transform:rotate(55deg);
+		}
+		.num:nth-child(3){
+			transform:rotate(85deg);
+			-webkit-transform:rotate(85deg);
+			-ms-transform:rotate(85deg);
+			-moz-transform:rotate(85deg);
+		}
+		.num:nth-child(4){
+			transform:rotate(115deg);
+			-webkit-transform:rotate(115deg);
+			-ms-transform:rotate(115deg);
+			-moz-transform:rotate(115deg);
+		}
+		.num:nth-child(5){
+			transform:rotate(145deg);
+			-webkit-transform:rotate(145deg);
+			-ms-transform:rotate(145deg);
+			-moz-transform:rotate(145deg);
+		}
+		.num:nth-child(6){
+			transform:rotate(175deg);
+			-webkit-transform:rotate(175deg);
+			-ms-transform:rotate(175deg);
+			-moz-transform:rotate(175deg);
+		}
+		.num:nth-child(7){
+			transform:rotate(205deg);
+			-webkit-transform:rotate(205deg);
+			-ms-transform:rotate(205deg);
+			-moz-transform:rotate(205deg);
+		}
+		.num:nth-child(8){
+			transform:rotate(235deg);
+			-webkit-transform:rotate(235deg);
+			-ms-transform:rotate(235deg);
+			-moz-transform:rotate(235deg);
+		}
+		.num:nth-child(9){
+			transform:rotate(265deg);
+			-webkit-transform:rotate(265deg);
+			-ms-transform:rotate(265deg);
+			-moz-transform:rotate(265deg);
+		}
+		.num:nth-child(10){
+			transform:rotate(295deg);
+			-webkit-transform:rotate(295deg);
+			-ms-transform:rotate(295deg);
+			-moz-transform:rotate(295deg);
+		}
+		.num:nth-child(11){
+			transform:rotate(325deg);
+			-webkit-transform:rotate(325deg);
+			-ms-transform:rotate(325deg);
+			-moz-transform:rotate(325deg);
+		}
+		.num:nth-child(12){
+			transform:rotate(355deg);
+			-webkit-transform:rotate(355deg);
+			-ms-transform:rotate(355deg);
+			-moz-transform:rotate(355deg);
+		}
+		.num span{
+			display: block;
+		}
+		.num:nth-child(1) span{
+			transform:rotate(-25deg);
+			-webkit-transform:rotate(-25deg);
+			-ms-transform:rotate(-25deg);
+			-moz-transform:rotate(-25deg);
+		}
+		.num:nth-child(2) span{
+			transform:rotate(-55deg);
+			-webkit-transform:rotate(-55deg);
+			-ms-transform:rotate(-55deg);
+			-moz-transform:rotate(-55deg);
+		}
+		.num:nth-child(3) span{
+			transform:rotate(-85deg);
+			-webkit-transform:rotate(-85deg);
+			-ms-transform:rotate(-85deg);
+			-moz-transform:rotate(-85deg);
+		}
+		.num:nth-child(4) span{
+			transform:rotate(-115deg);
+			-webkit-transform:rotate(-115deg);
+			-ms-transform:rotate(-115deg);
+			-moz-transform:rotate(-115deg);
+		}
+		.num:nth-child(5) span{
+			transform:rotate(-145deg);
+			-webkit-transform:rotate(-145deg);
+			-ms-transform:rotate(-145deg);
+			-moz-transform:rotate(-145deg);
+		}
+		.num:nth-child(6) span{
+			transform:rotate(-175deg);
+			-webkit-transform:rotate(-175deg);
+			-ms-transform:rotate(-175deg);
+			-moz-transform:rotate(-175deg);
+		}
+		.num:nth-child(7) span{
+			transform:rotate(-205deg);
+			-webkit-transform:rotate(-205deg);
+			-ms-transform:rotate(-205deg);
+			-moz-transform:rotate(-205deg);
+		}
+		.num:nth-child(8) span{
+			transform:rotate(-235deg);
+			-webkit-transform:rotate(-235deg);
+			-ms-transform:rotate(-235deg);
+			-moz-transform:rotate(-235deg);
+		}
+		.num:nth-child(9) span{
+			transform:rotate(-265deg);
+			-webkit-transform:rotate(-265deg);
+			-ms-transform:rotate(-265deg);
+			-moz-transform:rotate(-265deg);
+		}
+		.num:nth-child(10) span{
+			transform:rotate(-295deg);
+			-webkit-transform:rotate(-295deg);
+			-ms-transform:rotate(-295deg);
+			-moz-transform:rotate(-295deg);
+		}
+		.num:nth-child(11) span{
+			transform:rotate(-325deg);
+			-webkit-transform:rotate(-325deg);
+			-ms-transform:rotate(-325deg);
+			-moz-transform:rotate(-325deg);
+		}
+		.num:nth-child(12) span{
+			transform:rotate(-355deg);
+			-webkit-transform:rotate(-355deg);
+			-ms-transform:rotate(-355deg);
+			-moz-transform:rotate(-355deg);
+		}
+		.arms{
+			position: absolute;
+			top:110px;
+			left: 50%;
+			transform: translate(-50%);
+			-webkit-transform:translate(-50%);
+			-ms-transform:translate(-50%);
+			-moz-transform:translate(-50%);
+		}
+		.arms:after{
+			display: block;
+			content: "";
+			width:14px;
+			height:14px;
+			border-radius: 50%;
+			background-color: #000;
+			z-index:9;
+			position: relative;
+		}
+		.arm{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -100%);
+			-webkit-transform:translate(-50%, -100%);
+			-ms-transform:translate(-50%, -100%);
+			-moz-transform:translate(-50%, -100%);
+			transform-origin:50% 100%;
+			-webkit-transform-origin:50% 100%;
+			-ms-transform-origin:50% 100%;
+			-moz-transform-origin:50% 100%;
+		}
+		.hours{
+			width:4px;
+			height:60px;
+		    background-color: #000;
+		    animation:count 216000s infinite;
+		    -webkit-animation:count 216000s infinite;
+			-ms-animation:count 216000s infinite;
+			-moz-animation:count 216000s infinite;
+		}
+		.minute{
+			width:2px;
+			height:70px;
+		    background-color: #000;
+		    animation:count 3600s infinite;
+		    -webkit-animation:count 3600s infinite;
+			-ms-animation:count 3600s infinite;
+			-moz-animation:count 3600s infinite;
+		}
+		.second{
+			width:1px;
+			height:100px;
+		    background-color: #f00;
+		    animation:count 60s infinite;
+		    -webkit-animation:count 60s infinite;
+			-ms-animation:count 60s infinite;
+			-moz-animation:count 60s infinite;
+		}
+		@keyframes count{
+			0%, 100% {
+		    -webkit-transform: translate(-50%, -100%);
+		    -ms-transform: translate(-50%, -100%);
+		    -moz-transform: translate(-50%, -100%);
+		            transform: translate(-50%, -100%);
+		  	}
+			25%{
+				-webkit-transform:translate(-50%, -100%)  rotate(90deg);
+				-ms-transform:translate(-50%, -100%)  rotate(90deg);
+				-moz-transform:translate(-50%, -100%)  rotate(90deg);
+					transform:translate(-50%, -100%)  rotate(90deg);
+			}
+			50%{
+				-webkit-transform:translate(-50%, -100%)   rotate(180deg);
+				-ms-transform:translate(-50%, -100%)   rotate(180deg);
+				-moz-transform:translate(-50%, -100%)   rotate(180deg);	
+					transform:translate(-50%, -100%)   rotate(180deg);
+			}
+			75%{
+				-webkit-transform:translate(-50%, -100%)  rotate(270deg);
+				-ms-transform:translate(-50%, -100%)  rotate(270deg);
+				-moz-transform:translate(-50%, -100%)  rotate(270deg);	
+					transform:translate(-50%, -100%)  rotate(270deg);
+			}
+		}
+		@-webkit-keyframes count{
+			0%, 100% {
+		    -webkit-transform: translate(-50%, -100%);
+		    -ms-transform: translate(-50%, -100%);
+		    -moz-transform: translate(-50%, -100%);
+		            transform: translate(-50%, -100%);
+		  	}
+			25%{
+				-webkit-transform:translate(-50%, -100%)  rotate(90deg);
+				-ms-transform:translate(-50%, -100%)  rotate(90deg);
+				-moz-transform:translate(-50%, -100%)  rotate(90deg);
+					transform:translate(-50%, -100%)  rotate(90deg);
+			}
+			50%{
+				-webkit-transform:translate(-50%, -100%)   rotate(180deg);
+				-ms-transform:translate(-50%, -100%)   rotate(180deg);
+				-moz-transform:translate(-50%, -100%)   rotate(180deg);	
+					transform:translate(-50%, -100%)   rotate(180deg);
+			}
+			75%{
+				-webkit-transform:translate(-50%, -100%)  rotate(270deg);
+				-ms-transform:translate(-50%, -100%)  rotate(270deg);
+				-moz-transform:translate(-50%, -100%)  rotate(270deg);	
+					transform:translate(-50%, -100%)  rotate(270deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="clock-box">
+		<div class="clock-content">
+			<ul class="nums ">
+				<li class="num num-one"><span>1</span></li>
+				<li class="num num-two"><span>2</span></li>
+				<li class="num num-three"><span>3</span></li>
+				<li class="num num-fore"><span>4</span></li>
+				<li class="num num-five"><span>5</span></li>
+				<li class="num num-six"><span>6</span></li>
+				<li class="num num-seven"><span>7</span></li>
+				<li class="num num-eight"><span>8</span></li>
+				<li class="num num-nine"><span>9</span></li>
+				<li class="num num-ten"><span>10</span></li>
+				<li class="num num-eleven"><span>11</span></li>
+				<li class="num num-twelve"><span>12</span></li>
+			</ul>
+			<div class="arms">
+				<div class="arm hours"></div>
+				<div class="arm minute"></div>
+				<div class="arm second"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
